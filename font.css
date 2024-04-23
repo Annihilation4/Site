@@ -2,8 +2,15 @@
     font-family: MyCustomFont;
     src: url('18712.ttf');
 }
+@media only screen and (max-width: 700px) {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+}
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .container,
     .container2 {
         width: 100%;
@@ -11,26 +18,32 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .flex-container {
         flex-direction: column;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 700px) {
     .left-sidebar,
     .right-sidebar {
         display: none;
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .video {
         width: 100%;
-        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    footer, hr {
+        width: 100%;
     }
 }
 
 body {
+    width: 100%;
     margin: 0;
     padding: 0;
     font-family: MyCustomFont, sans-serif;
@@ -44,18 +57,23 @@ header {
     height: 100px;
     z-index: 1;
     background-size: cover;
+    box-shadow: 0px 0px 4px rgba(72, 156, 234, 0.3);
 }
+
 .flex-container {
-    margin-top: 0px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin: 50px auto;
 }
 
 .left-sidebar,
 .right-sidebar {
     position: fixed;
     top: 0;
-    height: 100vh;
+    height: 100%;
     width: 140px;
     z-index: -1;
     background-size: cover;
@@ -74,9 +92,11 @@ header {
 
 .container,
 .container2 {
-    flex: 1;
+    display: block;
     box-sizing: border-box;
-    margin: 140px;
+    margin: 0;
+    margin-top: 150px;
+    
 }
 
 
@@ -86,9 +106,7 @@ header {
 
 .my-div {
     display: inline-block;
-    margin: auto;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-    padding: 20px;
     border-radius: 10px;
 }
 
@@ -115,30 +133,26 @@ header {
     height: 110px;
 }
 .footer {
-    margin-left: 140px;
-    margin-right: 140px;
+
     background-color: #130e27;
 }
-.video {
-    margin-left: 140px;
-    margin-right: 140px;
+iframe {
     width: 100%;
-    text-align: center;
+    height: 700px;
 }
 hr {
-    margin-left: 140px;
-    margin-right: 140px;
+
 }
 .nav-menu {
     display: none;
     }
     .nav-menu {
         position: fixed;
-        top: 30px;
-        left: 0;
+        top: 50px;
+        right: 0;
         display: flex;
         flex-direction: column;
-        z-index: 9999;
+        z-index: 9;
        }
        #burger {
         position: relative;
@@ -190,7 +204,7 @@ hr {
         margin: 0;
         background-color: #fff;
         position: relative;
-        left: -100%;
+        right: -100%;
        }
        .menu a {
         color: rgb(39, 61, 70);
