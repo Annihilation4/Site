@@ -49,8 +49,8 @@
 
 @media only screen and (max-width: 700px) {
     .containerb {
-        overflow-x: auto !important; /* Разрешает горизонтальную прокрутку */
-        white-space: nowrap !important; /* Предотвращает перенос текста на новую строку */
+        overflow-x: auto !important;
+        white-space: nowrap !important;
         width: 100% !important;
         flex-wrap: nowrap!important;
         display: block !important;
@@ -63,6 +63,9 @@
     }
 }
 
+.carousel-control-next, .carousel-control-prev{
+    z-index: 0 !important;
+}
 
 body {
     width: 100%;
@@ -73,6 +76,7 @@ body {
 
 .navbar {
     padding: 0 !important;
+    z-index: 5 !important;
 }
 
 header {
@@ -140,9 +144,7 @@ header {
     box-sizing: border-box;
     margin: 0;
     margin-top: 150px;
-    
 }
-
 
 .container {
     text-align: center;
@@ -183,21 +185,24 @@ background-color: rgb(17, 20, 50);
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .navbar-nav .nav-link:hover {
-    text-shadow: 0 0 20px rgba(0, 0, 255, 1); /* Свечение при наведении */
+    text-shadow: 0 0 20px rgba(0, 0, 255, 1); 
     color: #ffffff !important;
 }
 .containerb {
     background-size: cover;
     background-color: #3b271963;
     padding-top: 40px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 20px;
     width: 100%;
     margin-left: 140px;
     margin-right: 140px;
     width: calc(100% - 280px);
+    white-space: nowrap !important;
+    flex-wrap: nowrap!important;
+    display: block !important;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .block {
@@ -213,22 +218,22 @@ background-color: rgb(17, 20, 50);
 }
 
 .block:hover {
-    filter: drop-shadow(0 0 10px rgb(63, 255, 143));
+    filter: drop-shadow(0 0 10px rgb(255, 201, 63));
 }
 
 .block:hover::before {
-    color: #ffffffd6; /* Изменение цвета текста при наведении */
+    color: #ffffffd6;
 }
 
 .block::before {
     position: relative;
     content: attr(data-text);
-    color: #1d1d39;
+    color: #211c12;
     font-weight: bold;
     display: block;
     width: 100%;
     background-color: rgba(255, 179, 0, 0);
-    font-size: 20px; /* Размер текста */
+    font-size: 20px; 
     top: -20px;
     font-family: MyCustomFont, sans-serif;
     transition: color 0.3s ease;
@@ -236,8 +241,93 @@ background-color: rgb(17, 20, 50);
 
 h2 {
     font-weight: bold!important;
-    color: #1d1d39 !important;
+    color: #1c0c05 !important;
     text-align: center;
-    font-family: sans-serif;
+    font-family: MyCustomFont;
+    font-size: 20px;
+    word-spacing: nullpx;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    padding: 20px;
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
 }
 
+footer{
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 50px;
+    display: flex;
+}
+.blockimg{
+    height: 60px;
+    width: 120px;
+    background-image: url(Blizzard-Logo.png);
+    background-size: cover;
+}
+
+.sub_block.new_dex {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/last.png);
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .sub_block.new_dex .form_sub {
+    background-color: rgba(28, 29, 65, 0.902);
+    width: 670px;
+    height: 327px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .sub_block.new_dex .form_sub .title {
+    text-align: center;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.875;
+   }
+   .sub_block.new_dex .form_sub .inputs {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+   }
+   .sub_block.new_dex .form_sub .inputs input {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(255, 247, 244);
+    border-radius: 22px;
+    background-color: rgba(0, 0, 0, 0.2);
+    left: 454px;
+    top: 4158px;
+    width: 251px;
+    height: 30px;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    margin: 20px;
+   }
+   .sub_block.new_dex .form_sub button {
+    border-radius: 22px;
+    background-color: rgb(66, 99, 205);
+    box-shadow: 0px 6px 40px 0px rgba(62, 57, 205, 0.54);
+    margin-top: 20px;
+    width: 232px;
+    height: 44px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+   }
+      
